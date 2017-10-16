@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="625.0" prefWidth="1221.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readwithuslms.FXML_MemberBookBorrowController">
+   <children>
+      <TableView fx:id="BorrowTabe" layoutX="60.0" layoutY="44.0" prefHeight="538.0" prefWidth="1088.0">
+        <columns>
+          <TableColumn fx:id="BorrowIssuID" prefWidth="152.99996948242188" text="Member ID" />
+          <TableColumn fx:id="BorrowIMemeberName" prefWidth="674.0" text="Member Name / Contact Number / Address" />
+            <TableColumn fx:id="BorrowIMemCont" prefWidth="259.0" text="BarrowBookCount / Fine" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

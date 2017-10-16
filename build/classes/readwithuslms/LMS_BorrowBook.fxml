@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="855.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readwithuslms.LMS_BorrowBookController">
+   <children>
+      <TabPane prefHeight="494.0" prefWidth="855.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="BORROW BOOKS">
+            <content>
+              <AnchorPane style="-fx-background-color: white;">
+                     <children>
+                        <Pane layoutX="16.0" layoutY="18.0" prefHeight="429.0" prefWidth="823.0">
+                           <children>
+                              <ImageView fitHeight="154.0" fitWidth="351.0" layoutX="472.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@mainImg.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="14.0" layoutY="14.0" text="Borrow Books">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="member_ID" labelFloat="true" layoutX="14.0" layoutY="67.0" prefHeight="37.0" prefWidth="322.0" promptText="INSERT MEMBER ID" />
+                              <JFXButton fx:id="get_member_Info" layoutX="14.0" layoutY="116.0" onAction="#get_mem_info" prefHeight="37.0" prefWidth="321.0" ripplerFill="WHITE" style="-fx-background-color: #278be4;" text="GET INFORMATION" textFill="WHITE" />
+                              <Text layoutX="14.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEMBER NAME : ">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="member_Name" layoutX="153.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Text>
+                              <Pane fx:id="book_INFOAdd" layoutX="14.0" layoutY="197.0" prefHeight="223.0" prefWidth="799.0">
+                                 <children>
+                                    <JFXTextField fx:id="book_ID" labelFloat="true" layoutX="14.0" layoutY="24.0" prefHeight="41.0" prefWidth="405.0" promptText="INSERT BOOK ID" />
+                                    <Text layoutX="16.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Barrow Date" />
+                                    <Text fx:id="BarrowDate" layoutX="16.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Text>
+                                    <Text layoutX="14.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Return Date" />
+                                    <Text fx:id="ReturnDate" layoutX="14.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXButton fx:id="Get_BookINFO" layoutX="434.0" layoutY="24.0" onAction="#bookINfo" prefHeight="42.0" prefWidth="172.0" ripplerFill="WHITE" style="-fx-background-color: #278be4;" text="GET BOOK INFO" textFill="WHITE" />
+                                    <Text layoutX="16.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" />
+                                    <Text fx:id="book_Name" layoutX="16.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <JFXButton fx:id="book_Issu" layoutX="613.0" layoutY="161.0" onAction="#issuBook" prefHeight="42.0" prefWidth="172.0" ripplerFill="WHITE" style="-fx-background-color: #278be4;" text="ISSU BOOK" textFill="WHITE" />
+                                    <JFXTextField fx:id="admin_ID" labelFloat="true" layoutX="612.0" layoutY="107.0" prefHeight="37.0" prefWidth="173.0" promptText="INSERT LIBRARIAN USERNAME" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="BOOK RETURN">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Pane layoutX="10.0" layoutY="11.0" prefHeight="445.0" prefWidth="835.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <ImageView fitHeight="203.0" fitWidth="291.0" layoutX="545.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@usertwo.jpg" />
+                                 </image>
+                              </ImageView>
+                              <JFXTextField fx:id="LMS_member_ID" labelFloat="true" layoutX="199.0" layoutY="46.0" onKeyReleased="#SearchBarrowBook" prefHeight="41.0" prefWidth="441.0" promptText="Enter Member ID" />
+                              <TableView fx:id="LMS_BookBarrowTable" layoutX="33.0" layoutY="101.0" prefHeight="95.0" prefWidth="773.0">
+                                <columns>
+                                  <TableColumn fx:id="LMS_BookBarrowID" prefWidth="65.0" text="BOOK BORROW ID" />
+                                    <TableColumn fx:id="LMS_BookBarrowMemberID" minWidth="0.0" prefWidth="85.0" text="MEMBER ID" />
+                                  <TableColumn fx:id="LMS_BookBarrowName" prefWidth="171.0" text="BORROW BOOK NAME" />
+                                    <TableColumn fx:id="LMS_BookBarrowEdDate" prefWidth="153.0" text="BOOK RETURN DATE" />
+                                    <TableColumn fx:id="LMS_BookBarrowFine" prefWidth="177.0" text="FINE FOR SEASON" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Pane layoutX="32.0" layoutY="254.0" prefHeight="179.0" prefWidth="772.0">
+                                 <children>
+                                    <GridPane alignment="CENTER_RIGHT" prefHeight="174.0" prefWidth="511.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0" minWidth="10.0" prefWidth="178.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0" minWidth="3.0" prefWidth="9.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="671.0" minWidth="10.0" prefWidth="331.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MEMBER NAME" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK NAME" GridPane.rowIndex="1" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ISSU ID" GridPane.rowIndex="3" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ISSU FINE" GridPane.rowIndex="4" />
+                                          <JFXButton fx:id="LMS_Book_Release" alignment="CENTER" onAction="#LMS_ReleaseBook" prefHeight="34.0" prefWidth="354.0" style="-fx-background-color: #278be4;" text="RELEASE BOOK" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                          <Text fx:id="Bor_MemberName" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" />
+                                          <Text fx:id="Bor_BookName" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <Text fx:id="Bor_IssuID" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <Text fx:id="Bor_IssuFine" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                          <JFXTextField fx:id="LMS_AdminSign" prefHeight="25.0" prefWidth="156.0" promptText="Admin UserName" GridPane.rowIndex="5" />
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BOOK ID" GridPane.rowIndex="2" />
+                                          <Text fx:id="Bor_BookID" strokeType="OUTSIDE" strokeWidth="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </Pane>
+                              <JFXButton fx:id="Relese" layoutX="250.0" layoutY="204.0" onAction="#ReleseBook" prefHeight="38.0" prefWidth="340.0" ripplerFill="WHITE" style="-fx-background-color: #278be4;" text="GET DETAILS " textFill="WHITE" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="24.0" layoutY="24.0" text="Return Books">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

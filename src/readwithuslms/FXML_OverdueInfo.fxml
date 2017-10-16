@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="494.0" prefWidth="855.0" style="-fx-background-color: #ffffff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="readwithuslms.FXML_OverdueInfoController">
+   <children>
+      <Pane layoutX="14.0" layoutY="12.0" prefHeight="470.0" prefWidth="827.0">
+         <children>
+            <ImageView fitHeight="277.0" fitWidth="397.0" layoutX="209.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@usertwo.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="223.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR OVERDUE BOOKS AND FINES">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <TableView fx:id="lms_OvedueBook" layoutX="68.0" layoutY="95.0" prefHeight="183.0" prefWidth="691.0">
+              <columns>
+                <TableColumn fx:id="lms_OvedueBookIssuId" prefWidth="75.0" text="BOOK  ISSU ID" />
+                <TableColumn fx:id="lms_OvedueBookName" prefWidth="75.0" text="BOOK NAME" />
+                  <TableColumn fx:id="lms_OvedueBookReturnDate" prefWidth="75.0" text="BOOK RETURN DATE" />
+                  <TableColumn fx:id="lms_OvedueBookFine" prefWidth="75.0" text="FINE FOR BOOK" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <Text fx:id="LMS_memberName" layoutX="223.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name" textAlignment="CENTER" wrappingWidth="381.2812504917383">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

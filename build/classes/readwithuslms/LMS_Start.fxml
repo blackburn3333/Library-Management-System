@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="LMS_LoginUi" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readwithuslms.LMS_StartController">
+   <children>
+      <ImageView fitHeight="590.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@LMS_Login.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="LMS_date" fill="WHITE" layoutX="696.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12-December-2017">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="LMS_Time" fill="WHITE" layoutX="692.0" layoutY="328.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12:60:60">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Text>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="91.0" layoutY="212.0" prefHeight="21.0" prefWidth="304.0" text="Enter your Username and Password">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="LMS_Un" alignment="CENTER" focusColor="#c6c781" layoutX="110.0" layoutY="235.0" prefHeight="35.0" prefWidth="266.0" promptText="USERNAME" />
+      <JFXPasswordField fx:id="LMS_Pw" alignment="CENTER" focusColor="#c6c781" layoutX="110.0" layoutY="286.0" prefHeight="35.0" prefWidth="266.0" promptText="PASSWORD" />
+      <Label fx:id="loginError" alignment="CENTER" contentDisplay="CENTER" layoutX="143.0" layoutY="334.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="LMS_SignIn" layoutX="129.0" layoutY="362.0" onAction="#LMS_SignIn" prefHeight="35.0" prefWidth="220.0" ripplerFill="#63753b" style="-fx-background-color: #9bc8b4;" text="SIGN IN" />
+      <JFXButton fx:id="LMS_SignUp" layoutX="97.0" layoutY="406.0" onAction="#LMS_BorrowBook" prefHeight="35.0" prefWidth="284.0" ripplerFill="#63753b" style="-fx-background-color: #9bc8b4;" text="BORROW BOOK PROCESS AND RETURN" />
+      <JFXButton fx:id="LMS_CloseBtn" layoutX="967.0" layoutY="10.0" onAction="#LMS_Close" ripplerFill="#63753b" style="-fx-background-color: #9bc8b4;" text="X" />
+   </children>
+</Pane>

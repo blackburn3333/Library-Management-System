@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="readwithuslms.LMS_bookManageController">
+   <children>
+      <TabPane layoutX="11.0" layoutY="53.0" prefHeight="485.0" prefWidth="881.0" style="-fx-background-color: #ffffff;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Book Information">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="881.0">
+                     <children>
+                        <JFXTextField fx:id="LMS_bookSearchValue" focusColor="#f29b38" labelFloat="true" layoutX="24.0" layoutY="46.0" onKeyReleased="#LMS_bookFind" prefHeight="39.0" prefWidth="632.0" promptText="Enter Book Name, ISBN, Author Name, Book ID, Book Category or Book Quantity" unFocusColor="#5cbfa5" />
+                        <Pane layoutX="24.0" layoutY="85.0" prefHeight="104.0" prefWidth="833.0" />
+                        <TableView fx:id="LMS_bookInfoTable" layoutX="20.0" layoutY="95.0" prefHeight="340.0" prefWidth="841.0">
+                          <columns>
+                            <TableColumn fx:id="LMS_ColbookName" prefWidth="235.0" text="Book Name" />
+                            <TableColumn fx:id="LMS_ColbookId" prefWidth="66.0" text="Book ID" />
+                              <TableColumn fx:id="LMS_ColbookIsbn" minWidth="7.0" prefWidth="123.0" text="Book ISBN" />
+                              <TableColumn fx:id="LMS_ColbookAuthor" minWidth="0.0" prefWidth="209.0" text="Book Author" />
+                              <TableColumn fx:id="LMS_ColbookCatagory" minWidth="0.0" prefWidth="123.0" text="Book Category" />
+                              <TableColumn fx:id="LMS_ColbookCount" prefWidth="83.0" text="Book Count" />
+                          </columns>
+                        </TableView>
+                        <JFXButton fx:id="LMS_RefreshTable" layoutX="674.0" layoutY="46.0" onAction="#refreshTable" prefHeight="39.0" prefWidth="183.0" ripplerFill="WHITE" style="-fx-background-color: #5cbfa5;" text="REFRESH" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Insert Book Information">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="148.0" fitWidth="337.0" layoutX="530.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@mainImg.jpg" />
+                           </image>
+                        </ImageView>
+                        <Text layoutX="314.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD BOOK TO LIBRARY">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Text>
+                        <GridPane layoutX="42.0" layoutY="71.0" prefHeight="225.0" prefWidth="798.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXTextField fx:id="lms_bname" focusColor="#f29b38" labelFloat="true" prefHeight="25.0" prefWidth="376.0" promptText="BOOK NAME" unFocusColor="#5cbfa5" />
+                              <JFXTextField fx:id="lms_bauthor" focusColor="#f29b38" labelFloat="true" promptText="BOOK AUTHOR" unFocusColor="#5cbfa5" GridPane.columnIndex="1" />
+                              <JFXTextField fx:id="lms_bisbn" focusColor="#f29b38" labelFloat="true" promptText="BOOK ISBN" unFocusColor="#5cbfa5" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="lms_bid" focusColor="#f29b38" labelFloat="true" promptText="BOOK ID" unFocusColor="#5cbfa5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="lms_bcount" focusColor="#f29b38" promptText="BOOK COUNT" unFocusColor="#5cbfa5" GridPane.rowIndex="2" />
+                              <JFXComboBox fx:id="lms_btype" focusColor="#f29b38" prefHeight="25.0" prefWidth="405.0" promptText="BOOK TYPE" unFocusColor="#5cbfa5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <JFXButton fx:id="lms_binsert" layoutX="42.0" layoutY="287.0" onAction="#LMS_AddBook" prefHeight="39.0" prefWidth="306.0" ripplerFill="WHITE" style="-fx-background-color: #5cbfa5;" text="INSERT INFORMATION" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Book Information Modifications">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="403.0" prefWidth="817.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="113.0" prefHeight="329.0" prefWidth="854.0">
+                           <children>
+                              <ImageView fitHeight="188.0" fitWidth="429.0" layoutX="597.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@bookInfo.jpg" />
+                                 </image>
+                              </ImageView>
+                              <GridPane layoutX="58.0" layoutY="35.0" prefHeight="216.0" prefWidth="739.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <JFXTextField fx:id="lms_bnameUpdate" focusColor="#f29b38" labelFloat="true" prefHeight="25.0" prefWidth="376.0" promptText="BOOK NAME" unFocusColor="#5cbfa5" />
+                                    <JFXTextField fx:id="lms_bauthorUpdate" focusColor="#f29b38" labelFloat="true" promptText="BOOK AUTHOR" unFocusColor="#5cbfa5" GridPane.columnIndex="1" />
+                                    <JFXTextField fx:id="lms_bisbnUpdate" focusColor="#f29b38" labelFloat="true" promptText="BOOK ISBN" unFocusColor="#5cbfa5" GridPane.rowIndex="1" />
+                                    <JFXTextField fx:id="lms_bidUpdate" focusColor="#f29b38" labelFloat="true" promptText="BOOK ID" unFocusColor="#5cbfa5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <JFXTextField fx:id="lms_bcountUpdate" focusColor="#f29b38" promptText="BOOK COUNT" unFocusColor="#5cbfa5" GridPane.rowIndex="2" />
+                                    <JFXComboBox fx:id="lms_btypeUpdate" focusColor="#f29b38" labelFloat="true" prefHeight="25.0" prefWidth="405.0" promptText="BOOK TYPE" unFocusColor="#5cbfa5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <JFXButton fx:id="LMS_UpdateBookInfo" layoutX="139.0" layoutY="251.0" onAction="#LMS_bookUpdate" prefHeight="39.0" prefWidth="280.0" ripplerFill="WHITE" style="-fx-background-color: #5cbfa5;" text="UPDATE INFORMATION" />
+                              <JFXButton fx:id="LMS_DeleteBookInfo" layoutX="436.0" layoutY="251.0" onAction="#LMS_bookDelete" prefHeight="39.0" prefWidth="280.0" ripplerFill="WHITE" style="-fx-background-color: #5cbfa5;" text="DELETE INFORMATION" />
+                           </children>
+                        </AnchorPane>
+                        <Text layoutX="285.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MODIFY BOOK INFORMATION">
+                           <font>
+                              <Font size="23.0" />
+                           </font>
+                        </Text>
+                        <JFXTextField fx:id="LMS_bookSearchValueUpdate" focusColor="#f29b38" labelFloat="true" layoutX="172.0" layoutY="74.0" prefHeight="39.0" prefWidth="393.0" promptText="Enter Book ID " unFocusColor="#5cbfa5" />
+                        <JFXButton fx:id="LMS_GetBookInfo" layoutX="580.0" layoutY="74.0" onAction="#LMS_bookSearch" prefHeight="39.0" prefWidth="130.0" ripplerFill="WHITE" style="-fx-background-color: #5cbfa5;" text="GET INFORMATION" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

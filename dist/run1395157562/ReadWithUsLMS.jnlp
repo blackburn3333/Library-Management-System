@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ReadWithUsLMS.jnlp">
+  <information>
+    <title>ReadWithUsLMS</title>
+    <vendor>Jayen</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ReadWithUsLMS.jar" size="686851" download="eager" />
+    <jar href="lib\controlsfx-8.20.9.jar" size="1018351" download="eager" />
+    <jar href="lib\controlsfx-samples-8.20.9.jar" size="658930" download="eager" />
+    <jar href="lib\fxsampler-1.0.8.jar" size="30435" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2390900" download="eager" />
+    <jar href="lib\joda-time-2.9.9.jar" size="634048" download="eager" />
+    <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
+    <jar href="lib\openjfx-dialogs-1.0.3.jar" size="149178" download="eager" />
+    <jar href="lib\rs2xml.jar" size="171578" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ReadWithUsLMS" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="readwithuslms.ReadWithUsLMS"  name="ReadWithUsLMS" />
+  <update check="always"/>
+</jnlp>
