@@ -193,11 +193,11 @@ public class LMS_BorrowBookController implements Initializable {
     public void LMS_ReleaseBook() throws Exception {
         LMS_business.LMS_BookRelease.LMS_ReleaseBook(Bor_IssuID, LMS_AdminSign, Bor_BookID);
         refreshTable();
-        OpenBarrow();
+//        OpenBarrow();
     }
     
-    public void OpenBarrow() throws Exception
-    {
-        Windows.OptionWindos("/readwithuslms/FXML_MemberBookBorrow.fxml","Barrow Books");
-    }
+//    public void OpenBarrow() throws Exception
+//    {
+//        Windows.OptionWindos("/readwithuslms/FXML_MemberBookBorrow.fxml","Barrow Books");
+//    }
 }

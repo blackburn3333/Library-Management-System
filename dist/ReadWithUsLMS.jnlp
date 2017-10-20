@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ReadWithUsLMS.jar" size="690975" download="eager" />
+    <jar href="ReadWithUsLMS.jar" size="687284" download="eager" />
     <jar href="lib\controlsfx-8.20.9.jar" size="1018351" download="eager" />
     <jar href="lib\controlsfx-samples-8.20.9.jar" size="658930" download="eager" />
     <jar href="lib\fxsampler-1.0.8.jar" size="30435" download="eager" />
