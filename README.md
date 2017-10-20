@@ -14,3 +14,8 @@ This LMS called as "Read With Us".Read with Us computer aided system is speciall
 10. Check overdue books - Both member and Librarian.
 11. Fine payment.
 12. View Fine payment details.
+
+#Default login details.
+
+UserName = LMS_HeadAdmin
+Password = LMS_HeadPassword
